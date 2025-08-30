@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>嘉義包車資訊 - Zhan Taxi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #fdfdfd;
+      color: #333;
+    }
+    header {
+      background: #ffcc00;
+      padding: 15px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .lang-switch {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .lang-switch button {
+      margin: 5px;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      background: white;
+      border-radius: 5px;
+    }
+    .banner {
+      text-align: center;
+      padding: 30px 15px;
+      background: #fff3b0;
+    }
+    .routes {
+      padding: 20px;
+    }
+    .route {
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .route img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .route h3 { margin-top: 0; }
+    .contact {
+      text-align: center;
+      padding: 20px 15px;
+    }
+    .contact h2 { margin-bottom: 15px; }
+    .contact a {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 8px;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+    .contact a.line { background: #00c300; }
+    .contact a.whatsapp { background: #25d366; }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="title">嘉義包車資訊</h1>
+    <div class="lang-switch">
+      <button onclick="setLang('zh')">🇹🇼 中文</button>
+      <button onclick="setLang('en')">🇬🇧 English</button>
+      <button onclick="setLang('vi')">🇻🇳 Tiếng Việt</button>
+      <button onclick="setLang('ja')">🇯🇵 日本語</button>
+      <button onclick="setLang('ko')">🇰🇷 한국어</button>
+      <button onclick="setLang('th')">🇹🇭 ไทย</button>
+    </div>
+  </header>
+
+  <section class="banner">
+    <h2 id="slogan">舒適專車 · 安全可靠 · 多語服務</h2>
+  </section>
+
+  <section class="routes">
+    <div class="route">
+      <h3 id="route1">🚖 嘉義市區一日遊</h3>
+      <p id="desc1">檜意森活村、文化路夜市、嘉義公園。<br>NT$ 2,200 起</p>
+      <img src="https://www.fbs168.com/webroot/file/ueditor/20211210/1639123218308523.jpg" alt="嘉義檜意森活村">
+    </div>
+    <div class="route">
+      <h3 id="route2">🌲 阿里山一日遊</h3>
+      <p id="desc2">阿里山森林遊樂區、奮起湖老街。<br>NT$ 4,200 起</p>
+      <img src="https://www.ali-nsa.net/image/5856/1024x768" alt="阿里山小火車">
+    </div>
+    <div class="route">
+      <h3 id="route3">🌸 梅山茶園之旅</h3>
+      <p id="desc3">太平雲梯、梅山茶園風景。<br>NT$ 3,600 起</p>
+      <img src="https://cw-image-resizer.cwg.tw/resize/uri/https%3A%2F%2Fcdn-smiletaiwan.cw.com.tw%2Farticle%2F201810%2Farticle-5bc6a8d873a6a.jpg/?w=828&format=webp" alt="梅山茶園">
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2 id="contact">📱 聯絡我們預約</h2>
+    <a href="https://line.me/ti/p/~0977269504" class="line">LINE 預約</a>
+    <a href="https://wa.me/886908232851" class="whatsapp">WhatsApp</a>
+  </section>
+
+  <footer>
+    <p>Zhan Taxi Service © 2025</p>
+  </footer>
+
+  <script>
+    const langText = {
+      zh: {
+        title: "嘉義包車資訊",
+        slogan: "舒適專車 · 安全可靠 · 多語服務",
+        route1: "🚖 嘉義市區一日遊", desc1: "檜意森活村、文化路夜市、嘉義公園。NT$ 2,200 起",
+        route2: "🌲 阿里山一日遊", desc2: "阿里山森林遊樂區、奮起湖老街。NT$ 4,200 起",
+        route3: "🌸 梅山茶園之旅", desc3: "太平雲梯、梅山茶園風景。NT$ 3,600 起",
+        contact: "📱 聯絡我們預約"
+      },
+      en: {
+        title: "Chiayi Charter Service",
+        slogan: "Comfortable · Safe · Multi-language",
+        route1: "🚖 Chiayi City Day Tour", desc1: "Hinoki Village, Wenhua Night Market, Chiayi Park. From NT$ 2,200",
+        route2: "🌲 Alishan Day Tour", desc2: "Alishan Forest, Fenqihu Old Street. From NT$ 4,200",
+        route3: "🌸 Meishan Tea Tour", desc3: "Taiping Suspension Bridge, Tea Garden Views. From NT$ 3,600",
+        contact: "📱 Contact & Booking"
+      },
+      vi: {
+        title: "Thông tin thuê xe Gia Nghĩa",
+        slogan: "Xe riêng thoải mái · An toàn · Hỗ trợ đa ngôn ngữ",
+        route1: "🚖 Tham quan Gia Nghĩa 1 ngày", desc1: "Làng Hinoki, Chợ đêm Văn Hóa, Công viên Gia Nghĩa. Từ 2,200 NT$",
+        route2: "🌲 Tham quan Alishan 1 ngày", desc2: "Khu rừng Alishan, Phố cổ Fenqihu. Từ 4,200 NT$",
+        route3: "🌸 Chuyến đi trà Meishan", desc3: "Cầu treo Taiping, phong cảnh đồi trà. Từ 3,600 NT$",
+        contact: "📱 Liên hệ đặt xe"
+      },
+      ja: {
+        title: "嘉義チャーター情報",
+        slogan: "快適 · 安全 · 多言語対応",
+        route1: "🚖 嘉義市内日帰りツアー", desc1: "檜意森活村、文化路夜市、嘉義公園。NT$ 2,200～",
+        route2: "🌲 阿里山日帰りツアー", desc2: "阿里山森林遊楽区、奮起湖老街。NT$ 4,200～",
+        route3: "🌸 梅山茶園ツアー", desc3: "太平吊橋、梅山茶園の風景。NT$ 3,600～",
+        contact: "📱 ご予約・お問い合わせ"
+      },
+      ko: {
+        title: "자이 택시 전용 서비스",
+        slogan: "편안함 · 안전 · 다국어 지원",
+        route1: "🚖 자이 시내 당일 투어", desc1: "Hinoki Village, 문화로 야시장, 자이 공원. NT$ 2,200부터",
+        route2: "🌲 알리산 당일 투어", desc2: "알리산 삼림, 펀치후 올드 스트리트. NT$ 4,200부터",
+        route3: "🌸 메이산 차밭 투어", desc3: "타이핑 현수교, 차밭 경관. NT$ 3,600부터",
+        contact: "📱 예약 및 문의"
+      },
+      th: {
+        title: "บริการรถเช่าเจียอี้",
+        slogan: "สะดวกสบาย · ปลอดภัย · รองรับหลายภาษา",
+        route1: "🚖 ทัวร์ในเมืองเจียอี้ 1 วัน", desc1: "หมู่บ้าน Hinoki, ตลาดกลางคืน Wenhua, สวนเจียอี้ เริ่มต้นที่ 2,200 NT$",
+        route2: "🌲 ทัวร์อาหลี่ซาน 1 วัน", desc2: "อุทยานป่าอาหลี่ซาน, ถนนเก่า Fenqihu เริ่มต้นที่ 4,200 NT$",
+        route3: "🌸 ทัวร์ไร่ชาเหมยซาน", desc3: "สะพานแขวนไท่ผิง, วิวไร่ชา เริ่มต้นที่ 3,600 NT$",
+        contact: "📱 ติดต่อจองรถ"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById("title").innerText = langText[lang].title;
+      document.getElementById("slogan").innerText = langText[lang].slogan;
+      document.getElementById("route1").innerText = langText[lang].route1;
+      document.getElementById("desc1").innerText = langText[lang].desc1;
+      document.getElementById("route2").innerText = langText[lang].route2;
+      document.getElementById("desc2").innerText = langText[lang].desc2;
+      document.getElementById("route3").innerText = langText[lang].route3;
+      document.getElementById("desc3").innerText = langText[lang].desc3;
+      document.getElementById("contact").innerText = langText[lang].contact;
+    }
+  </script>
+</body>
+</html>
